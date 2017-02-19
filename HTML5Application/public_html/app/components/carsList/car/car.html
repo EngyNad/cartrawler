@@ -1,0 +1,7 @@
+<div class="carComponent">
+  <div><img ng-src="{{$ctrl.car.carData.Vehicle.PictureURL}}"/></div>
+  <div class="title">{{$ctrl.car.carData.Vehicle.VehMakeModel["@Name"]}}</div>
+  <div class="carData">
+    {{$ctrl.car.carData.TotalCharge["@RateTotalAmount"]}}
+  </div>
+</div>
