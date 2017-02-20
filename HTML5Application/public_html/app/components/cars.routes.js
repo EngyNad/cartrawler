@@ -16,18 +16,18 @@
                     return CarsService.getCarsList();
                   }]
               }
+            })
+            .state('carPage', {
+              url: '/car/{code}',
+              templateUrl: 'app/components/carPage/carPage.html',
+              controller: 'carPageController',
+              controllerAs: 'carPageCtrl',
+              resolve: {
+                carsList: ['$stateParams','CarsService', function ($stateParams,CarsService) {
+                    return CarsService.getCar($stateParams.code);
+                  }]
+               }
             });
-//            .stata('carPage', {
-//              url: '/car/{id}',
-//              templateUrl: 'app/components/carPage/carPage.html',
-//              controller: 'carPageController',
-//              controllerAs: 'carPageCtrl',
-//              resolve: {
-//                id: ['$stateParams', function ($stateParams) {
-//                    return $stateParams.id;
-//                  }]
-//              }
-//            });
 
     $urlRouterProvider.otherwise('/');
   }

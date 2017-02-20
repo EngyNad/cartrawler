@@ -9,6 +9,7 @@ and open the template in the editor.
     <title>Cars List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/lib/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
   </head>
   <body ng-app="cars" ng-strict-di>
@@ -16,14 +17,16 @@ and open the template in the editor.
     <div id="app" class="appContainer">
       <ui-view></ui-view> 
     </div>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/lib/angular.min.js"></script>
     <script src="assets/lib/angular-ui-router.min.js"></script>
+    <script src="assets/lib/bootstrap.min.js"></script>
     
     <script src="app/components/cars.module.js"></script>
     <script src="app/components/cars.routes.js"></script>
     <script src="app/services/cars.service.js"></script>
     <script src="app/components/carsList/carsList.controller.js"></script>
     <script src="app/components/carsList/car/car.component.js"></script>
+    <script src="app/components/carPage/carPage.controller.js"></script>
   </body>
 </html>

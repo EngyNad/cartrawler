@@ -1,7 +1,28 @@
-<div class="carComponent">
-  <div><img ng-src="{{$ctrl.car.carData.Vehicle.PictureURL}}"/></div>
-  <div class="title">{{$ctrl.car.carData.Vehicle.VehMakeModel["@Name"]}}</div>
-  <div class="carData">
-    {{$ctrl.car.carData.TotalCharge["@RateTotalAmount"]}}
+<div class="col-md-4 col-sm-6 col-xs-12" >
+  <div class="col-md-12 carComponent">
+    <div class="clickableArea"> 
+      <div ui-sref="carPage({code:$ctrl.car.carData.Vehicle['@Code']})"><img  ng-src="{{$ctrl.car.carData.Vehicle.PictureURL}}"/></div>
+      <div ui-sref="carPage({code:$ctrl.car.carData.Vehicle['@Code']})" class="title">{{$ctrl.car.carData.Vehicle.VehMakeModel["@Name"]}}</div>
+    </div>
+    <div class="col-md-12 carData">
+      <a href="#{{$ctrl.car.carData.Vehicle['@Code']}}" data-toggle="collapse">Vehicle Data</a>
+      <div  id="{{$ctrl.car.carData.Vehicle['@Code']}}" class="collapse">
+        <div class="col-md-12"><span>Price: </span>{{$ctrl.car.carData.TotalCharge["@RateTotalAmount"]}}</div>
+        <div class="col-md-12" ng-if="$ctrl.car.carData.Vehicle['@AirConditionInd']"><span>Air Condition</span></div>
+        <div class="col-md-12" ><span>Transmission Type: </span>{{$ctrl.car.carData.Vehicle["@TransmissionType"]}}</div>
+        <div class="col-md-12" ><span>Fuel Type: </span>{{$ctrl.car.carData.Vehicle["@FuelType"]}}</div>
+        <div class="col-md-12" ><span>Drive Type: </span>{{$ctrl.car.carData.Vehicle["@DriveType"]}}</div>
+        <div class="col-md-12" ><span>No. of Passengers: </span>{{$ctrl.car.carData.Vehicle["@PassengerQuantity"]}}</div>
+        <div class="col-md-12" ><span>No. of Baggage: </span>{{$ctrl.car.carData.Vehicle["@BaggageQuantity"]}}</div>
+        <div class="col-md-12" ><span>Door Count: </span>{{$ctrl.car.carData.Vehicle["@DoorCount"]}}</div>
+      </div>
+    </div>
+    <div class="col-md-12 carData">
+      <a href="#Vendor{{$ctrl.car.carData.Vehicle['@Code']}}" data-toggle="collapse">Vendor Data</a>
+      <div  id="Vendor{{$ctrl.car.carData.Vehicle['@Code']}}" class="collapse">
+        <div class="col-md-12" ><span>Vendor Code: </span>{{$ctrl.car.vendorCode}}</div>
+        <div class="col-md-12" ><span>Vendor Name: </span>{{$ctrl.car.vendorName}}</div>
+      </div>
+    </div>
   </div>
 </div>
