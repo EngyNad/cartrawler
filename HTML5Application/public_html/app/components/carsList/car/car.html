@@ -7,7 +7,8 @@
     <div class="col-md-12 carData">
       <a href="#{{$ctrl.car.carData.Vehicle['@Code']}}" data-toggle="collapse">Vehicle Data</a>
       <div  id="{{$ctrl.car.carData.Vehicle['@Code']}}" class="collapse">
-        <div class="col-md-12"><span>Price: </span>{{$ctrl.car.carData.TotalCharge["@RateTotalAmount"]}}</div>
+        <div class="col-md-12"><span>Rate Amount: </span>{{$ctrl.car.carData.TotalCharge["@RateTotalAmount"]}}<span class="currency"> {{$ctrl.car.carData.TotalCharge["@CurrencyCode"]}}</span></div>
+        <div class="col-md-12"><span>Estimated Amount: </span>{{$ctrl.car.carData.TotalCharge["@EstimatedTotalAmount"]}}<span class="currency"> {{$ctrl.car.carData.TotalCharge["@CurrencyCode"]}}</span></div>
         <div class="col-md-12" ng-if="$ctrl.car.carData.Vehicle['@AirConditionInd']"><span>Air Condition</span></div>
         <div class="col-md-12" ><span>Transmission Type: </span>{{$ctrl.car.carData.Vehicle["@TransmissionType"]}}</div>
         <div class="col-md-12" ><span>Fuel Type: </span>{{$ctrl.car.carData.Vehicle["@FuelType"]}}</div>

@@ -9,7 +9,8 @@
         <div class="col-md-12 carData">
           <div class="subtitle">Vehicle Data</div>
           <div>
-            <div class="col-md-6"><span>Price: </span>{{carPageCtrl.carData.carData.TotalCharge["@RateTotalAmount"]}}</div>
+            <div class="col-md-6"><span>Rate Amount: </span>{{carPageCtrl.carData.carData.TotalCharge["@RateTotalAmount"]}}<span class="currency"> {{carPageCtrl.carData.carData.TotalCharge["@CurrencyCode"]}}</span></div>
+             <div class="col-md-6"><span>Estimated Amount: </span>{{carPageCtrl.carData.carData.TotalCharge["@EstimatedTotalAmount"]}}<span class="currency"> {{carPageCtrl.carData.carData.TotalCharge["@CurrencyCode"]}}</span></div>
             <div class="col-md-6" ng-if="carPageCtrl.carData.carData.Vehicle['@AirConditionInd']"><span>Air Condition</span></div>
             <div class="col-md-6" ><span>Transmission Type: </span>{{carPageCtrl.carData.carData.Vehicle["@TransmissionType"]}}</div>
             <div class="col-md-6" ><span>Fuel Type: </span>{{carPageCtrl.carData.carData.Vehicle["@FuelType"]}}</div>
